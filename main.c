@@ -9,7 +9,7 @@ void capturar_enteros()
     for (size_t i = 0; i < 5; i++)
     {
         scanf("%i", &enteros[i]);
-    }  
+    }
     for (size_t i = 0; i < 5; i++)
     {
         printf("%i\n", enteros[i]);
@@ -19,12 +19,22 @@ void capturar_enteros()
         suma = suma + enteros[i];
     }
     printf("Suma: %i\n", suma);
-    printf("Promedio: %f\n", suma/5.0);
+    printf("Promedio: %f\n", suma / 5.0);
+}
+
+void mostrar(int n, char cadena[]){
+    for (size_t i = 0; i < n; i++)
+    {
+        printf("%s", cadena);
+    }
+    
 }
 
 int main()
 {
     char op;
+    char cadena[20];
+    int n;
 
     do
     {
@@ -37,9 +47,15 @@ int main()
         switch (op)
         {
         case '1':
-        capturar_enteros();
+            capturar_enteros();
             break;
         case '2':
+            printf("Escribe una cadena de hasta 20 caracteres: ");
+            fflush(stdin);
+            fgets(cadena, sizeof(cadena), stdin);
+            printf("n: ");
+            scanf("%i", &n);
+            mostrar(n, cadena);
             break;
         case '3':
             break;
